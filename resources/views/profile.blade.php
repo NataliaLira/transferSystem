@@ -25,8 +25,8 @@
             @foreach ($received as $transfer)
             <tr>
                 <td>{{$transfer->created_at}}</td>
-                <td>{{$transfer->$value}}</td>
-                <td>{{$transfer->from}}</td>
+                <td>{{$transfer->value}}</td>
+                <td>{{$transfer->name}}</td>
             </tr>
             @endforeach
         </tbody>
@@ -46,8 +46,8 @@
             @foreach ($sent as $transfer)
             <tr>
                 <td>{{$transfer->created_at}}</td>
-                <td>{{$transfer->$value}}</td>
-                <td>{{$transfer->to}}</td>
+                <td>{{$transfer->value}}</td>
+                <td>{{$transfer->name}}</td>
             </tr>
             @endforeach
         </tbody>
