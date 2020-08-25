@@ -12,10 +12,10 @@ class TypeSeeder extends Seeder
     public function run()
     {
         DB::table('types')->insert([
-            'type' => "pFisica"
+            'type' => "customer"
         ]);
         DB::table('types')->insert([
-            'type' => "pJuridica"
+            'type' => "busness"
         ]);
     }
 }

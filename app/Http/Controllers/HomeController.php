@@ -27,8 +27,8 @@ class HomeController extends Controller
     }
     public function profileView(){
         $name = Auth::user()->name;
-        $sent = Transfer::where('from', Auth::user()->id)->rightJoin('users', 'transfer.to', '=', 'users.id')->get();
-        $received = Transfer::where('to', Auth::user()->id)->join('users', 'transfer.to', '=', 'users.id')->get();
+        $sent = Transfer::where('payer', Auth::user()->id)->rightJoin('users', 'transfer.payee', '=', 'users.id')->get();
+        $received = Transfer::where('payee', Auth::user()->id)->join('users', 'transfer.payee', '=', 'users.id')->get();
         return view('profile', ['name'=>$name, 'sent'=>$sent, 'received'=>$received]);
     }
     public function transferView(){

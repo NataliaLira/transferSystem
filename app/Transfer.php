@@ -6,8 +6,9 @@ use Illuminate\Database\Eloquent\Model;
 
 class Transfer extends Model
 {
-    protected $table="transfer";
+    protected $table="transfers";
+
     protected $fillable = [
-        'from', 'to', 'value', 'status'
+        'payer','payee', 'value'
     ];
 }

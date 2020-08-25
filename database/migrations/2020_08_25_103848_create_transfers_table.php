@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateTransferTable extends Migration
+class CreateTransfersTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,14 +13,13 @@ class CreateTransferTable extends Migration
      */
     public function up()
     {
-        Schema::create('transfer', function (Blueprint $table) {
+        Schema::create('transfers', function (Blueprint $table) {
             $table->id();
-            $table->integer('value');
-            $table->unsignedBigInteger('from');
-            $table->foreign('from')->references('id')->on('users');
-            $table->unsignedBigInteger('to');
-            $table->foreign('to')->references('id')->on('users');
-            $table->string('status')->nullable();
+            $table->decimal('value', 10, 2);
+            $table->unsignedBigInteger('payer');
+            $table->foreign('payer')->references('id')->on('users');
+            $table->unsignedBigInteger('payee');
+            $table->foreign('payee')->references('id')->on('users');
             $table->timestamps();
         });
     }
