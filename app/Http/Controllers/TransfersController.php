@@ -19,12 +19,13 @@ class TransfersController extends Controller
         $url = 'https://run.mocky.io/v3/8fafdd68-a090-496f-8c9a-3442cf30dae6';
         $contentArray = json_decode(file_get_contents($url));
         if($contentArray->message === 'Autorizado'){
-            Transfer::create([
+            $transfer = Transfer::create([
                 'value'=>$request->value,
                 'from'=>$request->from,
                 'to'=>$request->to
             ]);
-            return response()->json($article, 201);
+            $transfer->save();
+            return response()->json($transfer, 201);
         } else {
             return response()->json(null, 403);
         }
