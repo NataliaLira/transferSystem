@@ -17,3 +17,13 @@ use Illuminate\Support\Facades\Route;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+ 
+Route::get('transfers', 'TransfersController@index');
+ 
+Route::get('transfers/{id}', 'TransfersController@show');
+
+Route::post('transfers', 'TransfersController@store');
+
+Route::put('transfers/{id}', 'TransfersController@update');
+
+Route::delete('transfers/{id}', 'TransfersController@delete');

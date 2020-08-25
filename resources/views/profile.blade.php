@@ -9,7 +9,7 @@
 <body>
 <h1>Bem vindo(a) {{$name}}</h1>
 @if(auth()->user()->type == 1)
-<a href="/transferir"><button>Realizar Transferência</button></a> 
+<a href="/transfer"><button>Realizar Transferência</button></a> 
 @endif
 <div>
     <h1>Transferências Recebidas</h1>

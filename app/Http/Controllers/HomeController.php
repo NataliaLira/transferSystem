@@ -31,4 +31,7 @@ class HomeController extends Controller
         ->get();
         return view('profile', ['name'=>$name, 'sent'=>$sent, 'received'=>$received]);
     }
+    public function transferView(){
+        return view('transfers');
+    }
 }

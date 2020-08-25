@@ -16,3 +16,4 @@ Auth::routes();
 
 Route::get('/', 'HomeController@index')->name('home');
 Route::get('/profile', 'HomeController@profileView')->middleware('auth');
+Route::get('/transfer', 'HomeController@transferView')->middleware('auth');
