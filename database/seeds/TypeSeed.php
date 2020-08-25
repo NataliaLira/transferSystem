@@ -15,7 +15,7 @@ class TypeSeeder extends Seeder
             'type' => "customer"
         ]);
         DB::table('types')->insert([
-            'type' => "busness"
+            'type' => "business"
         ]);
     }
 }
