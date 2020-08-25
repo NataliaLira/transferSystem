@@ -45,7 +45,7 @@
         <tbody>
             @foreach ($sent as $transfer)
             <tr>
-                <td>{{$transfer->created_at}}</td>
+                <td>{{$transfer->creatgited_at}}</td>
                 <td>{{$transfer->value}}</td>
                 <td>{{$transfer->name}}</td>
             </tr>
