@@ -17,6 +17,10 @@
                 <option value="{{ $user->id }}">{{ $user->name }}</option>
             @endforeach
         </select>
+
+        <label for="value">Valor:</label>
+        <input type="number">
+        <input type="hidden" name="from" value={{auth()->user()->id}}>
         <button>Transferir</button>
     </form>
 </body>

@@ -20,7 +20,7 @@ class CreateTransferTable extends Migration
             $table->foreign('from')->references('id')->on('users');
             $table->unsignedBigInteger('to');
             $table->foreign('to')->references('id')->on('users');
-            $table->string('status')->nullable;
+            $table->string('status')->nullable();
             $table->timestamps();
         });
     }

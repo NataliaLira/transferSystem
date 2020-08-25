@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Transfer;
+use App\User;
 
 class HomeController extends Controller
 {
@@ -32,6 +33,7 @@ class HomeController extends Controller
         return view('profile', ['name'=>$name, 'sent'=>$sent, 'received'=>$received]);
     }
     public function transferView(){
-        return view('transfers');
+        $users = User::all();
+        return view('transfers', ['users'=>$users]);
     }
 }

@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use App\Transfer;
 
 class TransfersController extends Controller
@@ -20,7 +21,7 @@ class TransfersController extends Controller
         if($contentArray->message === 'Autorizado'){
             Transfer::create([
                 'value'=>$request->value,
-                'from'=>Auth::user()->id,
+                'from'=>$request->from,
                 'to'=>$request->to
             ]);
             return response()->json($article, 201);
